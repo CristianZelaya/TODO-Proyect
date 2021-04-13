@@ -75,5 +75,7 @@ btnBorrarComp.addEventListener('click', () => {
         }
     }
 
+    console.log(todoList);
+
 
 });
