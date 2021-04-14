@@ -70,11 +70,11 @@ module.exports = {
             filename: '[name].[contenthash].css',
             ignoreOrder: false
         }),
-        new CopyPlugin({
+        /*new CopyPlugin({
             patterns: [
                 {from: 'src/assets', to: 'assets/'}
             ]
-        }),
+        }),*/
         new MinifyPlugin()
     ]
  
