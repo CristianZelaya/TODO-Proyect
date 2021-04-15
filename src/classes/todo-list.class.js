@@ -56,7 +56,16 @@ export class TodoList{
                         ? JSON.parse(localStorage.getItem('todo'))
                         : [];
 
-        this.todos = this.todos.map( obj => Todo.fromJson( obj )); // map retorna un nuevo objeto
+        this.todos = this.todos.map( obj => Todo.fromJson( obj ) ); // map retorna un nuevo objeto
+
+    }
+
+    totalPendientes(){
+
+        const totalPendientes = this.todos.filter( todo => !todo.completado);
+
+        return totalPendientes.length;
+
     }
 
 }

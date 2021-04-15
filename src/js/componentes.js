@@ -6,7 +6,7 @@ const divTodoList   = document.querySelector('.todo-list'),
       btnBorrarComp = document.querySelector('.clear-completed'),
       ulFiltro      = document.querySelector('.filters'),
       aFiltro       = document.querySelectorAll('.filtro'),
-      pendientes    = document.querySelector('.todo-count');
+      pendientes    = document.querySelector('strong');
 
 export const crearTodoHTML = ( todo ) => {
 
@@ -41,7 +41,8 @@ txtImput.addEventListener('keyup', ( event ) => {
         todoList.nuevoTodo(nuevoTodo);
 
         crearTodoHTML(nuevoTodo);
-
+        
+        pendientes.innerText = todoList.totalPendientes();
         txtImput.value = '';
     }
 });
@@ -55,11 +56,13 @@ divTodoList.addEventListener('click', (event) => {
     if ( nombreElemento.includes('input')){// click en imput check
         todoList.marcarCompletado(todoId);
         todoElemento.classList.toggle('completed');
+        pendientes.innerText = todoList.totalPendientes();
 
     } else if ( nombreElemento.includes('button')){ // borra el todo
 
         todoList.eliminarTodo( todoId );
         divTodoList.removeChild( todoElemento );
+        pendientes.innerText = todoList.totalPendientes();
     }
 
     

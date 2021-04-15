@@ -11,6 +11,10 @@ todoList.todos[0].imprimirClase();
 
 console.log(todoList);
 
+const p = document.querySelector('strong');
+
+p.innerText = todoList.totalPendientes();
+
 /*const todo = new Todo('Aprender JavaScript');
 todoList.nuevoTodo(todo);
 crearTodoHTML(todo);*/

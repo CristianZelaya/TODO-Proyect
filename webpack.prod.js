@@ -1,9 +1,9 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path                    = require('path');
+const HtmlWebPackPlugin       = require('html-webpack-plugin');
+const MiniCssExtractPlugin    = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
+const CopyPlugin              = require('copy-webpack-plugin');
+const MinifyPlugin            = require("babel-minify-webpack-plugin");
 
 module.exports = {
  
@@ -24,14 +24,6 @@ module.exports = {
                 use: {
                   loader: "babel-loader",
                 }
-            },
-            {
-                test: /\.css$/i,
-                exclude: /styles\.css$/i,
-                use: [
-                    'style-loader', 
-                    'css-loader'
-                ]
             },
             {
                 test: /styles\.css$/i,
